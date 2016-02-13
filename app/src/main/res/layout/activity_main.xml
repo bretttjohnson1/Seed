@@ -22,32 +22,35 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="fill_parent"
-            android:text="Select PDF"
-            android:id="@+id/button"
+            android:text="@string/pdf_button"
+            android:id="@+id/select_pdf"
             android:background="@drawable/rectangle" />
 
         <EditText
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:id="@+id/editText"
+            android:text="@string/search_default"
+            android:id="@+id/search_text"
             android:layout_weight="0.46"
             android:nestedScrollingEnabled="false" />
 
         <Button
             android:layout_width="50dp"
             android:layout_height="fill_parent"
-            android:id="@+id/button2"
-            android:background="@android:drawable/ic_menu_search" />
+            android:id="@+id/search"
+            android:background="@android:drawable/ic_menu_search"
+            android:onClick="search"
+            android:clickable="true" />
 
     </LinearLayout>
 
     <ListView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/listView"
+        android:id="@+id/listoutput"
         android:divider="#0a0a0a"
         android:dividerHeight="1dp"
+        android:paddingTop="10dp"
         android:layout_below="@+id/linearLayout"
-        android:layout_alignParentStart="true"
-        android:paddingTop="10dp" />
+        android:layout_alignParentEnd="true" />
 </RelativeLayout>
