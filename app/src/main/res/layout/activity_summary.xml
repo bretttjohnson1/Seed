@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
@@ -14,14 +15,51 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="@string/summary_title"
-        android:id="@+id/textView"
+        android:id="@+id/summary_title"
+        android:textSize="36dp"
+        android:layout_gravity="center_horizontal"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:textSize="36dp" />
+        android:layout_centerHorizontal="true" />
 
-    <FrameLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/textView"
-        android:layout_alignParentStart="true"></FrameLayout>
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/summary_relativeLayout">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/jump_to_page"
+            android:id="@+id/jump_too"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/page_number"
+            android:id="@+id/page_text"
+            android:layout_alignBottom="@+id/jump_too"
+            android:layout_alignParentStart="true"
+            android:textSize="30dp" />
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/summary_text"
+        android:layout_below="@+id/summary_title"
+        android:layout_alignParentStart="true"
+        android:layout_above="@+id/summary_relativeLayout"
+        android:layout_alignEnd="@+id/summary_relativeLayout"
+        android:maxLines = "60"
+        android:scrollbars = "vertical"
+        android:textSize="20dp"
+        android:nestedScrollingEnabled="false"
+        android:phoneNumber="false" />
+
+
 </RelativeLayout>

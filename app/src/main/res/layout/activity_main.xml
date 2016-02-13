@@ -7,8 +7,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.seed.search.seed.MainActivity"
-    android:background="@drawable/rectangle">
+    tools:context="com.seed.search.seed.MainActivity">
 
 
     <LinearLayout
@@ -24,12 +23,13 @@
             android:layout_height="fill_parent"
             android:text="@string/pdf_button"
             android:id="@+id/select_pdf"
-            android:background="@drawable/rectangle" />
+            android:background="@drawable/rectangle"
+            android:onClick="files" />
 
         <EditText
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:text="@string/search_default"
+            android:hint="@string/search_default"
             android:id="@+id/search_text"
             android:layout_weight="0.46"
             android:nestedScrollingEnabled="false" />
@@ -50,7 +50,9 @@
         android:id="@+id/listoutput"
         android:divider="#0a0a0a"
         android:dividerHeight="1dp"
-        android:paddingTop="10dp"
+        android:paddingTop="0dp"
         android:layout_below="@+id/linearLayout"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:background="@drawable/rectangle"
+        android:layout_marginTop="10dp" />
 </RelativeLayout>

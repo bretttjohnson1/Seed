@@ -1,6 +1,11 @@
 <resources>
     <string name="app_name">Seed</string>
     <string name="summary_title">Summary</string>
-    <string name="pdf_button">Select PDf/txt</string>
+    <string name="pdf_button">Select PDF</string>
     <string name="search_default">Enter question...</string>
+    <string name="jump_to_page">Jump to page</string>
+    <string name="page_number">Page: </string>
+    <string name="file_selected">null</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
