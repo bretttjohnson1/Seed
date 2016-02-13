@@ -9,6 +9,7 @@ import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Layout;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -29,9 +30,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
-    static String selectedFile;
+    static String selectedFile="";
     Bundle queryresults[];
-    String fileselected="/sdcard/Download/1984.pdf";
     public void search(View view){
 
         Bundle b[] = Search.performSearch("are ayyylmaos real");
@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         String items[] = new String[queryresults.length];
         for(int a =0;a<queryresults.length;a++) {
             items[a] = "Page: " + queryresults[a].get("page") + "\n" + queryresults[a].get("sentence");
-            queryresults[a].putString("filedirectory",fileselected);
+            queryresults[a].putString("filedirectory",selectedFile);
         }
         ArrayAdapter<String> ListAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,items);
         ListView lv = (ListView)findViewById(R.id.listoutput);
@@ -58,10 +58,11 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         FileSelector df = FileSelector.newInstance();
         df.show(ft, "dialogue");
 
+
     }
-    @Override
+    /*@Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        Toast.makeText(MainActivity.this, data.getDataString(), Toast.LENGTH_SHORT).show();
+        Log.d("Clicked","CLIICKCKEDIDKDID");
         if (requestCode == FileSelector.SELECT_NEW) {
             if (resultCode == RESULT_OK) {
 
@@ -75,5 +76,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
             }
         }
-    }
+    }*/
+
 }
