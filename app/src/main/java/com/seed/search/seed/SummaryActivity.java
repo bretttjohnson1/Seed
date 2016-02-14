@@ -38,14 +38,10 @@ public class SummaryActivity extends Activity implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
-        /*Intent intent = new Intent(this, PdfActivity.class);
-        intent.putExtra("filedirectory",data.getString("filedirectory"));
-        startActivity(intent);*/
         File file = new File(data.getString("filedirectory"));
         Intent target = new Intent(Intent.ACTION_VIEW);
         target.setDataAndType(Uri.fromFile(file),"application/pdf");
         target.setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
-
         Intent intent = Intent.createChooser(target, "Open File");
         try {
             startActivity(intent);

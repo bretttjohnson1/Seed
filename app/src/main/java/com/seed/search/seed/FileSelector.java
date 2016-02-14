@@ -58,7 +58,7 @@ public class FileSelector extends DialogFragment implements AdapterView.OnItemCl
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         ArrayList <String> strings = new ArrayList <String>();
-        strings.add("Add new file");
+        strings.add("Add new file                                            ");
         File files = new File("/sdcard/files.txt");
         if(files.exists()) {
             try {
@@ -122,9 +122,19 @@ public class FileSelector extends DialogFragment implements AdapterView.OnItemCl
         if (requestCode == FileSelector.SELECT_NEW) {
             if (resultCode == Activity.RESULT_OK) {
                 File files = new File("/sdcard/files.txt");
+                String previous  ="";
+                try {
+                    Scanner scan = new Scanner(files);
+                    while(scan.hasNextLine())
+                        previous+=scan.nextLine()+"\n";
+                } catch (FileNotFoundException e) {
+                    e.printStackTrace();
+                }
                 try {
                     OutputStreamWriter outputStreamWriter = new OutputStreamWriter(new FileOutputStream(files));
-                    outputStreamWriter.write(data.getData().getPath());
+                    outputStreamWriter.write(previous);
+                    if(!previous.contains(data.getData().getPath()))
+                        outputStreamWriter.write(data.getData().getPath());
                     Log.d("Clicked", data.getData().getPath());
                     MainActivity.selectedFile=data.getData().getPath();
                     outputStreamWriter.close();

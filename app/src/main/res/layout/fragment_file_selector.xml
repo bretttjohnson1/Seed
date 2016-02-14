@@ -2,12 +2,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.seed.search.seed.FileSelector">
+    tools:context="com.seed.search.seed.FileSelector"
+    android:clickable="true"
+    android:contextClickable="false">
 
 
     <ListView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/pdflist"
-        android:layout_gravity="center" />
+        android:layout_gravity="center"
+        android:nestedScrollingEnabled="true"
+        android:clickable="true" />
 </FrameLayout>
